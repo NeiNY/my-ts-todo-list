@@ -7,14 +7,6 @@ const Navbar: React.FC = () => {
         <a href="/" className="brand-logo">
           TODO react + typescript
         </a>
-        <ul className="right hide-on-med-and-down">
-          <li>
-            <a href="/">Sass</a>
-          </li>
-          <li>
-            <a href="/">Components</a>
-          </li>
-        </ul>
       </div>
     </nav>
   );

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
@@ -7,9 +7,18 @@ import { ITodo } from "./interfaces";
 function App() {
   const [todos, setTodos] = useState<ITodo[]>([]);
 
+  useEffect(() => {
+    const saved = JSON.parse(localStorage.getItem("todos") || "[]") as ITodo[];
+    setTodos(saved);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
+
   const addHandler = (title: string) => {
     const newTodo = {
-      title: title,
+      title,
       id: Date.now(),
       completed: false,
     };
@@ -26,6 +35,7 @@ function App() {
       })
     );
   };
+
   const removeHandler = (id: number) => {
     setTodos((prev) => prev.filter((todo) => todo.id !== id));
   };
