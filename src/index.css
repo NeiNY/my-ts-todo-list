@@ -11,3 +11,35 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.px-1{
+  padding: 0 2rem;
+}
+.py-1{
+  padding: 2rem 0;
+}
+.mx-1{
+  padding: 0 2rem;
+}
+.my-1{
+  padding: 2rem 0;
+}
+.todo.completed span {
+  text-decoration: line-through;
+}
+
+.todo label {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 1rem;
+  margin: 1rem;
+  background-color: #f3f3f3;
+  color:black
+}
+
+.todo i {
+  z-index: 2
+}
